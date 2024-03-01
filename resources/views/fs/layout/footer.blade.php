@@ -4,23 +4,23 @@
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <ul class="list-inline text-center">
                     <li class="list-inline-item">
-                        <a href="#!">
+                        <a href="https://www.linkedin.com/in/wirandra-alaya-rahman-1302b8190/details/experience/" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
                             </span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#!">
+                        <a href="https://medium.com/me/stories/public" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
                             </span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#!">
+                        <a href="https://github.com/dayCod" target="_blank">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-github fa-stack-1x fa-inverse"></i>

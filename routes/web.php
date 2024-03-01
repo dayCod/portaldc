@@ -17,6 +17,7 @@ Route::group(['prefix' => '/', 'as' => 'fs.'], function () {
 
     Route::controller(PostController::class)->group(function () {
         Route::get('/', 'index')->name('post.index');
+        Route::get('/{slug}/post', 'detail')->name('post.detail');
     });
 
     Route::controller(AboutController::class)->group(function () {

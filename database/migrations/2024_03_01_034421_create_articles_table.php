@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->ulid('id')->primary();
 
+            $table->string('slug')->unique();
             $table->string('title');
             $table->string('reference_url');
 
