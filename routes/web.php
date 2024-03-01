@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Fs\AboutController;
+use App\Http\Controllers\Fs\NewsletterController;
+use App\Http\Controllers\Fs\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -9,18 +12,19 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () {
-    return view('fs.index');
-});
 
-Route::get('/detail', function () {
-    return view('fs.detail');
-});
+Route::group(['prefix' => '/', 'as' => 'fs.'], function () {
 
-Route::get('/about', function () {
-    return view('fs.about');
-});
+    Route::controller(PostController::class)->group(function () {
+        Route::get('/', 'index')->name('post.index');
+    });
 
-Route::get('/subs', function () {
-    return view('fs.subs');
+    Route::controller(AboutController::class)->group(function () {
+        Route::get('/about', 'index')->name('about.index');
+    });
+
+    Route::controller(NewsletterController::class)->group(function () {
+        Route::get('/newsletter', 'index')->name('newsletter.index');
+    });
+
 });

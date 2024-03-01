@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('description');
 
             $table->unsignedInteger('categories')
-                ->comment('0:social, 1:original, 2:community');
+                ->comment('0:original, 1:social');
 
             $table->foreignUlid('user_id')
                 ->references('id')
