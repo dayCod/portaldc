@@ -3,7 +3,7 @@
 @section('title', 'Subs')
 
 @section('header-section')
-    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <header class="masthead" style="background-color: #070F2B">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -62,7 +62,7 @@
                                 <div class="text-center text-danger mb-3">Error sending message!</div>
                             </div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary text-uppercase disabled" id="submitButton"
+                            <button class="btn btn-dark-blue text-uppercase" id="submitButton"
                                 type="submit">Send</button>
                         </form>
                     </div>
