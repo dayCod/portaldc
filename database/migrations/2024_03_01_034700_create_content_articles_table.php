@@ -13,10 +13,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('content_articles', function (Blueprint $table) {
             $table->ulid('id')->primary();
-            $table->string('name')->unique();
-            $table->string('guard_name')->default('web');
+
+            $table->longText('long_text');
+
+            $table->foreignUlid('article_id')
+                ->references('id')
+                ->on('articles')
+                ->cascadeOnDelete();
+
             $table->timestamps();
         });
     }
@@ -26,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('content_articles');
     }
 };

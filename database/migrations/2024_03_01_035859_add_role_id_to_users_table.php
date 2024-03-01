@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
-            $table->ulid('id')->primary();
-            $table->string('name')->unique();
-            $table->string('guard_name')->default('web');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignUlid('role_id')
+                ->references('id')
+                ->on('roles')
+                ->cascadeOnDelete();
         });
     }
 
@@ -26,6 +26,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role_id');
+        });
     }
 };
