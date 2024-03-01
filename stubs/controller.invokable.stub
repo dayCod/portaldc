@@ -1,0 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ rootNamespace }}Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
+class {{ class }} extends Controller
+{
+    /**
+     * @return void
+     */
+    public function __construct(
+        //
+    ) {}
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function __invoke(Request $request): JsonResponse
+    {
+        //
+    }
+}
