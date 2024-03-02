@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-
-Route::group(['prefix' => '/', 'as' => 'fs.'], function () {
+Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['guest']], function () {
 
     Route::controller(PostController::class)->group(function () {
         Route::get('/', 'index')->name('post.index');
@@ -30,3 +29,5 @@ Route::group(['prefix' => '/', 'as' => 'fs.'], function () {
     });
 
 });
+
+require __DIR__ . '/adm.php';
