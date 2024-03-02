@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
     {
         $user = User::first();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 20; $i++) {
             $slug = Str::slug(fake()->sentence('10'));
             $article = Article::create([
                 'title' => fake()->sentence('10'),

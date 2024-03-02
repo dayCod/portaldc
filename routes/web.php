@@ -26,6 +26,7 @@ Route::group(['prefix' => '/', 'as' => 'fs.'], function () {
 
     Route::controller(NewsletterController::class)->group(function () {
         Route::get('/newsletter', 'index')->name('newsletter.index');
+        Route::post('/newsletter/submit', 'submit')->name('newsletter.submit');
     });
 
 });
