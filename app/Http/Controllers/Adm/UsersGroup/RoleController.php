@@ -17,7 +17,9 @@ class RoleController extends Controller
      */
     public function index(): View
     {
-        $roles = Role::latest()->get();
+        $roles = Role::latest()
+            ->where('name', '!=', 'admin')
+            ->get();
 
         return view('adm.ug.role.index', [
             'roles' => $roles

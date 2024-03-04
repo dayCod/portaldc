@@ -27,7 +27,7 @@
     </div>
 
     <!-- Nav Item - Role -->
-    <li class="nav-item ">
+    <li class="nav-item {{ request()->routeIs('adm.role.*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('adm.role.index') }}">
             <i class="fas fa-user"></i>
             <span>Roles</span></a>
