@@ -31,3 +31,4 @@ Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['guest']], functi
 });
 
 require __DIR__ . '/adm.php';
+require __DIR__ . '/auth.php';
