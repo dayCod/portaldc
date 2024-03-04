@@ -39,9 +39,19 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                </tr>
+                                @foreach($roles as $role)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $role->name }}</td>
+                                        <td>{{ $role->guard_name }}</td>
+                                        <td>
+                                            <a href="{{ route('adm.role.edit', $role->id) }}" class="btn btn-success btn-sm">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <x-delete-btn :url="route('adm.role.delete', $role->id)" />
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

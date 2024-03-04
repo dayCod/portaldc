@@ -30,7 +30,7 @@
                                 class="form-control @error('name') is-invalid @enderror"
                                 placeholder="Role Name"
                                 name="name"
-                                value="{{ old('name') }}"
+                                value="{{ old('name', @$role->name) }}"
                                 required
                             >
                             @error('name')

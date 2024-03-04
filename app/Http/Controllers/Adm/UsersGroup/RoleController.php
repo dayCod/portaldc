@@ -17,7 +17,11 @@ class RoleController extends Controller
      */
     public function index(): View
     {
-        return view('adm.ug.role.index');
+        $roles = Role::latest()->get();
+
+        return view('adm.ug.role.index', [
+            'roles' => $roles
+        ]);
     }
 
     /**
@@ -26,7 +30,7 @@ class RoleController extends Controller
     public function create(): View
     {
         $actions = [
-            'url' => '',
+            'url' => route('adm.role.store'),
             'method' => 'POST',
             'act' => 'Submit'
         ];
@@ -49,5 +53,54 @@ class RoleController extends Controller
         return redirect()
             ->route('adm.role.index')
             ->with('success', __('notifications.store', ['prop' => 'Role']));
+    }
+
+    /**
+     * @param string $id
+     * @return View
+     */
+    public function edit(string $id): View
+    {
+        $actions = [
+            'url' => route('adm.role.update', $id),
+            'method' => 'PUT',
+            'act' => 'Update'
+        ];
+
+        $role = Role::where('id', $id)->first();
+
+        return view('adm.ug.role.form', [
+            'actions' => $actions,
+            'role' => $role
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param string $id
+     * @return RedirectResponse
+     */
+    public function update(Request $request, string $id): RedirectResponse
+    {
+        Role::where('id', $id)->update($request->validate([
+            'name' => ['required', 'unique:roles,name,'.$id]
+        ]));
+
+        return redirect()
+            ->route('adm.role.index')
+            ->with('success', __('notifications.update', ['prop' => 'Role']));
+    }
+
+    /**
+     * @param string $id
+     * @return RedirectResponse
+     */
+    public function delete(string $id): RedirectResponse
+    {
+        Role::where('id', $id)->delete();
+
+        return redirect()
+            ->route('adm.role.index')
+            ->with('success', __('notifications.delete', ['prop' => 'Role']));
     }
 }
