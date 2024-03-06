@@ -63,8 +63,8 @@
     </li>
 
     <!-- Nav Item - Permission -->
-    <li class="nav-item ">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ request()->routeIs('adm.subs.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('adm.subs.index') }}">
             <i class="fas fa-user-plus"></i>
             <span>Subscribers</span></a>
     </li>

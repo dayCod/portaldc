@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Adm\DashboardController;
 use App\Http\Controllers\Adm\Portal\ArticleController;
+use App\Http\Controllers\Adm\Portal\SubscriberController;
 use App\Http\Controllers\Adm\UsersGroup\PermissionController;
 use App\Http\Controllers\Adm\UsersGroup\RoleController;
 use App\Http\Controllers\Adm\UsersGroup\UserController;
@@ -64,6 +65,14 @@ Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth']], func
         Route::put('/{article}/update', [ArticleController::class, 'update'])
             ->name('update');
         Route::delete('/{article}/delete', [ArticleController::class, 'delete'])
+            ->name('delete');
+    });
+
+    // Subscribers
+    Route::group(['prefix' => 'subs', 'as' => 'subs.'], function () {
+        Route::get('/', [SubscriberController::class, 'index'])
+            ->name('index');
+        Route::delete('/{subs}/delete', [SubscriberController::class, 'delete'])
             ->name('delete');
     });
 
