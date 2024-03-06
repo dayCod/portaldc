@@ -27,7 +27,7 @@
                                     <th>#</th>
                                     <th>Role Name</th>
                                     <th>Guard Name</th>
-                                    <th>Aksi</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -35,7 +35,7 @@
                                     <th>#</th>
                                     <th>Role Name</th>
                                     <th>Guard Name</th>
-                                    <th>Aksi</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                             <tbody>

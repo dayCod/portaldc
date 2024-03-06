@@ -28,7 +28,7 @@
                                     <th>User Name</th>
                                     <th>User Email</th>
                                     <th>User Role</th>
-                                    <th>Aksi</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -37,7 +37,7 @@
                                     <th>User Name</th>
                                     <th>User Email</th>
                                     <th>User Role</th>
-                                    <th>Aksi</th>
+                                    <th>Actions</th>
                                 </tr>
                             </tfoot>
                             <tbody>
