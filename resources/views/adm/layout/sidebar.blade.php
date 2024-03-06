@@ -34,17 +34,39 @@
     </li>
 
     <!-- Nav Item - Permission -->
-    <li class="nav-item ">
+    {{-- <li class="nav-item ">
         <a class="nav-link" href="#">
             <i class="fas fa-lock"></i>
             <span>Permissions</span></a>
-    </li>
+    </li> --}}
 
     <!-- Nav Item - Users -->
-    <li class="nav-item ">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ request()->routeIs('adm.user.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('adm.user.index') }}">
             <i class="fas fa-users"></i>
             <span>Users</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Portal Data
+    </div>
+
+    <!-- Nav Item - Role -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-newspaper"></i>
+            <span>Article</span></a>
+    </li>
+
+    <!-- Nav Item - Permission -->
+    <li class="nav-item ">
+        <a class="nav-link" href="#">
+            <i class="fas fa-user-plus"></i>
+            <span>Subscribers</span></a>
     </li>
 
 </ul>

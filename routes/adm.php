@@ -34,22 +34,6 @@ Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth']], func
             ->name('delete');
     });
 
-    // Permission
-    Route::group(['prefix' => 'permission', 'as' => 'permission.'], function () {
-        Route::get('/', [PermissionController::class, 'index'])
-            ->name('index');
-        Route::get('/create', [PermissionController::class, 'create'])
-            ->name('create');
-        Route::post('/store', [PermissionController::class, 'store'])
-            ->name('store');
-        Route::get('/{permission}/edit', [PermissionController::class, 'edit'])
-            ->name('edit');
-        Route::put('/{permission}/update', [PermissionController::class, 'update'])
-            ->name('update');
-        Route::delete('/{permission}/delete', [PermissionController::class, 'delete'])
-            ->name('delete');
-    });
-
     // User
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
         Route::get('/', [UserController::class, 'index'])
