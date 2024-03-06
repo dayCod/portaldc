@@ -30,7 +30,9 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
     <!-- Slick Slider -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
 
 </head>
 
@@ -126,7 +128,10 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('admin/js/demo/datatables-demo.js') }}"></script>
 
+    <!-- Summernote js -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <!-- Summernote Plugin js -->
 
     <!-- Slick Slider -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -158,12 +163,14 @@
     </script>
 
     <script>
-        $(document).ready(function () {
-            $('.summernotes').each(function () {
+        $(document).ready(function() {
+            $('.summernotes').each(function() {
                 var placeholder = $(this).data('placeholder')
                 $(this).summernote({
                     height: 200,
-                    placeholder: placeholder
+                    placeholder: placeholder,
+                    tabsize: 2,
+                    lang: 'id-ID'
                 })
             });
         });

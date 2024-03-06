@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Adm\DashboardController;
+use App\Http\Controllers\Adm\Portal\ArticleController;
 use App\Http\Controllers\Adm\UsersGroup\PermissionController;
 use App\Http\Controllers\Adm\UsersGroup\RoleController;
 use App\Http\Controllers\Adm\UsersGroup\UserController;
@@ -47,6 +48,22 @@ Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth']], func
         Route::put('/{user}/update', [UserController::class, 'update'])
             ->name('update');
         Route::delete('/{user}/delete', [UserController::class, 'delete'])
+            ->name('delete');
+    });
+
+    // Article
+    Route::group(['prefix' => 'article', 'as' => 'article.'], function () {
+        Route::get('/', [ArticleController::class, 'index'])
+            ->name('index');
+        Route::get('/create', [ArticleController::class, 'create'])
+            ->name('create');
+        Route::post('/store', [ArticleController::class, 'store'])
+            ->name('store');
+        Route::get('/{article}/edit', [ArticleController::class, 'edit'])
+            ->name('edit');
+        Route::put('/{article}/update', [ArticleController::class, 'update'])
+            ->name('update');
+        Route::delete('/{article}/delete', [ArticleController::class, 'delete'])
             ->name('delete');
     });
 

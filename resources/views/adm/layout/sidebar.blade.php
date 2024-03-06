@@ -56,8 +56,8 @@
     </div>
 
     <!-- Nav Item - Role -->
-    <li class="nav-item">
-        <a class="nav-link" href="#">
+    <li class="nav-item {{ request()->routeIs('adm.article.*') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('adm.article.index') }}">
             <i class="fas fa-newspaper"></i>
             <span>Article</span></a>
     </li>

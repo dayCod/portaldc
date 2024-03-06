@@ -16,7 +16,7 @@ class Role extends Model
     /**
      * @return void
      */
-    protected static function booted()
+    protected static function booted(): void
     {
         static::creating(function ($role) {
             $role->name = Str::lower($role->name);

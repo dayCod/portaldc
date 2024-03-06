@@ -33,8 +33,23 @@
         <!-- End Footer-->
 
         <!-- Bootstrap core JS-->
+        <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('front/js/scripts.js') }}"></script>
+
+        <script>
+            $(document).ready(function () {
+                $('code').each(function () {
+                    $(this).css({
+                        "color": "#6531c2",
+                        "background-color": "rgb(245 245 245)",
+                        "padding": "15px",
+                        "border-radius": "5px",
+                        "width": "300px"
+                    })
+                })
+            })
+        </script>
     </body>
 </html>
