@@ -22,15 +22,13 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur
-                        voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam
-                        ducimus consectetur?</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque
-                        architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum
-                        in officia voluptas voluptatibus, minus!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid
-                        ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit
-                        tempora!</p>
+                    <h3 style="text-decoration: underline; text-underline-offset:13px;">Profile Summary.</h3>
+                    <p>
+                        I'm a PHP Developer and Laravel Enthusiast, Most of my time is spent at <a href="https://github.com/dayCod">Daycode</a> of which i'm the Owner. Currently Working on IT Solution Company called <a href="https://rembon.co.id/" target="_blank">Rembon Karya Digital</a> and do some opensources work at <a href="https://github.com/GarapDigital" target="_blank">Garap Digital</a> and <a href="https://github.com/LQL-ID" target="_blank">Laravel Quick Learn Indonesia</a>
+                    </p>
+                    <p>
+                        Apart from being a PHP Developer, I'm also Learn about Cryptocurrency and Blockchain. Love to listening Music, watching memes and other fun things.
+                    </p>
                 </div>
             </div>
         </div>
