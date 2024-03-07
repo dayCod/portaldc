@@ -94,7 +94,7 @@
 
     <!-- Content Row -->
 
-    {{-- <div class="row d-flex align-items-stretch">
+    <div class="row d-flex align-items-stretch">
         <!-- Visitor Counter Bar Chart -->
         <div class="col-12 h-100">
             <div class="card shadow mb-4 h-100">
@@ -110,7 +110,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection
 
 @push('js')
@@ -119,7 +119,8 @@
         integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    {{-- <script>
+    <script>
+        const data = JSON.parse('{!! json_encode($yearly_visitor_chart) !!}')
         new Chart(
             document.getElementById('visitor-chart'), {
                 type: 'bar',
@@ -132,5 +133,5 @@
                 }
             }
         );
-    </script> --}}
+    </script>
 @endpush
