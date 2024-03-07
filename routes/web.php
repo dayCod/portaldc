@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['guest']], function () {
+Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['guest', 'visitor']], function () {
 
     Route::controller(PostController::class)->group(function () {
         Route::get('/', 'index')->name('post.index');

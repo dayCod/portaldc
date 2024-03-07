@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Adm\DashboardController;
+use App\Http\Controllers\Adm\GuestActivities\VisitorLogController;
 use App\Http\Controllers\Adm\Portal\ArticleController;
 use App\Http\Controllers\Adm\Portal\SubscriberController;
 use App\Http\Controllers\Adm\UsersGroup\PermissionController;
@@ -19,6 +20,12 @@ Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth']], func
 
     Route::get('/', [DashboardController::class, 'index'])
         ->name('index');
+
+    // Visitor Log
+    Route::group(['prefix' => 'visitor', 'as' => 'visitor.'], function () {
+        Route::get('/', [VisitorLogController::class, 'index'])
+            ->name('index');
+    });
 
     // Role
     Route::group(['prefix' => 'role', 'as' => 'role.'], function () {

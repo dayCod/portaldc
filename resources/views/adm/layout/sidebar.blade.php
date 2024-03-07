@@ -23,6 +23,21 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
+        Guest Activities
+    </div>
+
+    <!-- Nav Item - Role -->
+    <li class="nav-item {{ request()->routeIs('adm.visitor.index') ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('adm.visitor.index') }}">
+            <i class="fas fa-question"></i>
+            <span>Visitor Log</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
         Users Group
     </div>
 
@@ -32,13 +47,6 @@
             <i class="fas fa-user"></i>
             <span>Roles</span></a>
     </li>
-
-    <!-- Nav Item - Permission -->
-    {{-- <li class="nav-item ">
-        <a class="nav-link" href="#">
-            <i class="fas fa-lock"></i>
-            <span>Permissions</span></a>
-    </li> --}}
 
     <!-- Nav Item - Users -->
     <li class="nav-item {{ request()->routeIs('adm.user.*') ? 'active' : '' }}">
