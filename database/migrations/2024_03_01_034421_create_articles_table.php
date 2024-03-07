@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->string('slug')->unique();
             $table->string('title');
-            $table->string('reference_url');
+            $table->string('reference_url')->nullable();
 
             $table->text('description');
 

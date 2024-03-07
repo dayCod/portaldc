@@ -6,9 +6,7 @@
             position: "topRight"
         });
     </script>
-@endif
-
-@if (Session::has('fail'))
+@elseif (Session::has('fail'))
     <script>
         iziToast.error({
             title: 'Error',

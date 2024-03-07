@@ -9,7 +9,7 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
                         <h1>{{ $article->title }}</h1>
-                        <span class="subheading">Posted on {{ $article->created_at->format('F d, Y') }}. By {{ $article->user->name }}</span>
+                        <span class="subheading">Posted on {{ $article->created_at->format('d F Y') }}. By {{ $article->user->name }}</span>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <span>
-                        {!! html_entity_decode(str_replace('&nbsp;', ' ', str_replace('pre', 'code', $article->contentArticle->long_text))) !!}
+                        {!! html_entity_decode(str_replace('&nbsp;', ' ', $article->contentArticle->long_text)) !!}
                     </span>
                 </div>
             </div>

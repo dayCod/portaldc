@@ -40,13 +40,13 @@
 
         <script>
             $(document).ready(function () {
-                $('code').each(function () {
+                $('pre').each(function () {
                     $(this).css({
                         "color": "#6531c2",
                         "background-color": "rgb(245 245 245)",
                         "padding": "15px",
                         "border-radius": "5px",
-                        "width": "300px"
+                        "width": "100%"
                     })
                 })
             })
