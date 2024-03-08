@@ -43,7 +43,7 @@
                 @empty
                     <div class="card my-5">
                         <div class="card-body text-center">
-                            404 Not Found
+                            Thanks for your Enthusiasm but, article not ready yet
                         </div>
                     </div>
                 @endforelse
