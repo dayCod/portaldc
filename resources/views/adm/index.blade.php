@@ -1,6 +1,6 @@
 @extends('adm.layout.master')
 
-@section('title', 'Beranda')
+@section('title', 'Dashboard')
 
 @section('content')
     <!-- Page Heading -->
