@@ -12,6 +12,7 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('fs.post.index', ['ctg' => 'social']) }}">Social</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('fs.about.index') }}">About</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('fs.newsletter.index') }}">Newsletter</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('fs.login.index') }}">Login</a></li>
             </ul>
         </div>
     </div>

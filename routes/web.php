@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Fs\AboutController;
+use App\Http\Controllers\Fs\Auth\LoginController;
+use App\Http\Controllers\Fs\Auth\RegisterController;
 use App\Http\Controllers\Fs\NewsletterController;
 use App\Http\Controllers\Fs\PostController;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['visitor']], function () {
+
+    Route::controller(LoginController::class)->group(function () {
+        Route::get('/login', 'index')->name('login.index');
+        Route::post('/login', 'store')->name('login.store');
+    });
+
+    Route::controller(RegisterController::class)->group(function () {
+        Route::get('/register', 'index')->name('register.index');
+        Route::post('/register', 'store')->name('register.store');
+    });
 
     Route::controller(PostController::class)->group(function () {
         Route::get('/', 'index')->name('post.index');
