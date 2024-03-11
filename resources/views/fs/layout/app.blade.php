@@ -45,8 +45,12 @@
         <script src="{{ asset('lib/iziToast/dist/js/iziToast.min.js') }}"></script>
         <!-- Summernote js -->
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <!-- Page level plugins -->
+        <script src="{{ asset('admin/vendor/chart.js/Chart.min.js') }}"></script>
 
         @include('lib.izitoast')
+
+        @stack('js')
 
         <script>
             $(document).ready(function () {
