@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Fs\Auth;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -23,8 +24,23 @@ class LoginController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $credentials = $request->validate([
+            'email' => ['required', 'email', 'exists:users,email'],
+            'password' => ['required'],
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()
+                ->route('fs.post.index')
+                ->with('success', 'Login Successfully!');
+        }
+
+        return redirect()
+            ->back()
+            ->with('fail', 'Please Enter Correct Email / Password!');
     }
 }

@@ -26,6 +26,16 @@ class Role extends Model
     /**
      * @var string
      */
+    CONST WRITER = 'writer';
+
+    /**
+     * @var string
+     */
+    CONST ADMIN = 'admin';
+
+    /**
+     * @var string
+     */
     protected $table = 'roles';
 
     /**

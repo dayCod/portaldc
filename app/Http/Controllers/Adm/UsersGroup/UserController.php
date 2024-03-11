@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $users = User::latest()
             ->with('role')
-            ->whereHas('role', fn ($query) => $query->where('name', '!=', 'admin'))
+            ->whereHas('role', fn ($query) => $query->where('name', '!=', Role::ADMIN))
             ->get();
 
         return view('adm.ug.user.index', [
@@ -40,7 +40,7 @@ class UserController extends Controller
         ];
 
         $roles = Role::latest()
-            ->where('name', '!=', 'admin')
+            ->where('name', '!=', Role::ADMIN)
             ->get();
 
         return view('adm.ug.user.form', [
@@ -55,7 +55,7 @@ class UserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        User::create($request->validate([
+        $user = User::create($request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8'],
@@ -75,7 +75,7 @@ class UserController extends Controller
     {
         $user = User::where('id', $id)->first();
         $roles = Role::latest()
-            ->where('name', '!=', 'admin')
+            ->where('name', '!=', Role::ADMIN)
             ->get();
 
         $actions = [

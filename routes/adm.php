@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 | Adm Routes
 |--------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'adm', 'as' => 'adm.', 'middleware' => ['auth', 'role:admin']], function () {
 
     Route::get('/', [DashboardController::class, 'index'])
         ->name('index');

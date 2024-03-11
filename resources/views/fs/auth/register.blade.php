@@ -22,7 +22,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="my-5">
-                    <form action="{{ route('fs.login.store') }}" method="POST">
+                    <form action="{{ route('fs.register.store') }}" method="POST">
                         @csrf
                         <div class="form-floating">
                             <input class="form-control" id="name" type="name" placeholder="Enter your name..." name="name" required />

@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
-| Auth Routes
+| Auth Admin Routes
 |--------------------------------------------------------------------------
 */
 Route::group(['prefix' => 'auth', 'as' => 'auth.', 'middleware' => ['guest']], function () {

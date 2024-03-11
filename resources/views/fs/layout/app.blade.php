@@ -14,6 +14,10 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet" />
+        <!-- Izitoast -->
+        <link rel="stylesheet" href="{{ asset('lib/iziToast/dist/css/iziToast.min.css') }}">
+        <!-- Summernotes -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     </head>
     <body>
         <!-- Navigation -->
@@ -37,6 +41,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="{{ asset('front/js/scripts.js') }}"></script>
+        <!-- Izitoast JS -->
+        <script src="{{ asset('lib/iziToast/dist/js/iziToast.min.js') }}"></script>
+        <!-- Summernote js -->
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+        @include('lib.izitoast')
 
         <script>
             $(document).ready(function () {
