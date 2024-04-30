@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Article extends Model
 {
@@ -67,6 +68,14 @@ class Article extends Model
     }
 
     /**
+     * @return HasMany
+     */
+    public function likeForArticle(): HasMany
+    {
+        return $this->hasMany(LikesForArticle::class, 'article_id', 'id');
+    }
+
+    /**
      * @param Builder $query
      * @param string $articleId
      * @param string $field
@@ -76,6 +85,13 @@ class Article extends Model
     public function scopeUpdateStatsField($query, $articleId, $field, $amount)
     {
         $article = $query->where('id', $articleId)->first();
+
+        if ($field == "likes_counter") {
+            LikesForArticle::create([
+                'article_id' => $articleId,
+                'user_id' => auth()->id()
+            ]);
+        }
 
         return tap($article)->update([
             $field => $article->{$field} + $amount

@@ -37,6 +37,46 @@
                             <a href="#!">{{ $post->user->name }}</a>
                             on {{ $post->created_at->format(' F d, Y') }}
                         </p>
+                        @if (!Auth::check())
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <i class="fa fa-eye"></i>
+                                    {{ $post->views_counter }}
+                                </div>
+                                <div>
+                                    <i class="fas fa-thumbs-up"></i>
+                                    {{ $post->likes_counter }}
+                                </div>
+                                <div>
+                                    <i class="fa fa-comment"></i>
+                                    {{ $post->comments_counter }}
+                                </div>
+                            </div>
+                        @else
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <i class="fa fa-eye"></i>
+                                    {{ $post->views_counter }}
+                                </div>
+                                @if (empty($post->likeForArticle()->where('user_id', auth()->id())->first()))
+                                    <div>
+                                        <a href="{{ route('fs.post.likes', $post->slug) }}">
+                                            <i class="far fa-thumbs-up"></i>
+                                            {{ $post->likes_counter }}
+                                        </a>
+                                    </div>
+                                @else
+                                    <div>
+                                        <i class="fas fa-thumbs-up"></i>
+                                        {{ $post->likes_counter }}
+                                    </div>
+                                @endif
+                                <div>
+                                    <i class="fa fa-comment"></i>
+                                    {{ $post->comments_counter }}
+                                </div>
+                            </div>
+                        @endif
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />

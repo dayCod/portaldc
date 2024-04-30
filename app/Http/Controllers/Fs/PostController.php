@@ -18,7 +18,7 @@ class PostController extends Controller
      */
     public function index(Request $request): View
     {
-        $articles = Article::latest();
+        $articles = Article::with('likeForArticle')->latest();
 
         if ($request->ctg == "original") {
             $articles = $articles->where('categories', 0)->paginate(5);
@@ -44,5 +44,20 @@ class PostController extends Controller
         Article::updateStatsField($article->id, 'views_counter', 1);
 
         return view('fs.detail', ['article' => $article]);
+    }
+
+    /**
+     * @param string $slug
+     * @return RedirectResponse
+     */
+    public function increaseLikes(string $slug): RedirectResponse
+    {
+        $article = Article::where('slug', $slug)->first();
+
+        Article::updateStatsField($article->id, 'likes_counter', 1);
+
+        return redirect()
+            ->back()
+            ->with('success', "{$article->title} Successfully Like!");
     }
 }

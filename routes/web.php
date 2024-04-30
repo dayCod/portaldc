@@ -18,6 +18,7 @@ Route::group(['prefix' => '/', 'as' => 'fs.', 'middleware' => ['visitor']], func
     Route::controller(PostController::class)->group(function () {
         Route::get('/', 'index')->name('post.index');
         Route::get('/{slug}/post', 'detail')->name('post.detail');
+        Route::get('/{slug}/likes', 'increaseLikes')->name('post.likes');
     });
 
     // About Controller
