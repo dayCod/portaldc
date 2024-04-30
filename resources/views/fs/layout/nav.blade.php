@@ -27,7 +27,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('fs.panel.profile.index') }}">My Profile</a></li>
                             <li><a class="dropdown-item" href="{{ route('fs.panel.stats.index') }}">My Stats</a></li>
-                            <li><a class="dropdown-item" href="#">My Post</a></li>
+                            <li><a class="dropdown-item" href="{{ route('fs.panel.my_post.index') }}">My Post</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

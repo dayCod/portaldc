@@ -27,6 +27,9 @@
                                     <th>#</th>
                                     <th>Headline</th>
                                     <th>Short Description</th>
+                                    <th>Views</th>
+                                    <th>Likes</th>
+                                    <th>Comments</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -35,6 +38,9 @@
                                     <th>#</th>
                                     <th>Headline</th>
                                     <th>Short Description</th>
+                                    <th>Views</th>
+                                    <th>Likes</th>
+                                    <th>Comments</th>
                                     <th>Actions</th>
                                 </tr>
                             </tfoot>
@@ -44,6 +50,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $article->title }}</td>
                                         <td>{{ $article->description }}</td>
+                                        <td>{{ $article->views_counter }}</td>
+                                        <td>{{ $article->likes_counter }}</td>
+                                        <td>{{ $article->comments_counter }}</td>
                                         <td>
                                             <a href="{{ route('adm.article.edit', $article->id) }}" class="btn btn-success btn-sm">
                                                 <i class="fa fa-edit"></i>

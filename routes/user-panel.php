@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Fs\Panel\PostController;
 use App\Http\Controllers\Fs\Panel\ProfileController;
 use App\Http\Controllers\Fs\Panel\StatsController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,12 @@ Route::group(['prefix' => 'panel', 'as' => 'panel.'], function () {
             ->name('edit');
         Route::post('/update', [ProfileController::class, 'update'])
             ->name('update');
+    });
+
+    // My Post
+    Route::group(['prefix' => 'my-post', 'as' => 'my_post.'], function () {
+        Route::get('/', [PostController::class, 'index'])
+            ->name('index');
     });
 
 });

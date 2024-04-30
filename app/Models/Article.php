@@ -65,4 +65,20 @@ class Article extends Model
     {
         return $this->hasOne(ContentArticle::class, 'article_id', 'id');
     }
+
+    /**
+     * @param Builder $query
+     * @param string $articleId
+     * @param string $field
+     * @param int $amount
+     * @return Collection
+     */
+    public function scopeUpdateStatsField($query, $articleId, $field, $amount)
+    {
+        $article = $query->where('id', $articleId)->first();
+
+        return tap($article)->update([
+            $field => $article->{$field} + $amount
+        ]);
+    }
 }

@@ -41,6 +41,8 @@ class PostController extends Controller
     {
         $article = Article::where('slug', $slug)->first();
 
+        Article::updateStatsField($article->id, 'views_counter', 1);
+
         return view('fs.detail', ['article' => $article]);
     }
 }
